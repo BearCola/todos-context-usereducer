@@ -13,6 +13,8 @@ import { DispatchContext } from "./context/todos.context";
 function Todo({ id, task, completed }) {
   const dispatch = useContext(DispatchContext);
   const [isEditing, toggle] = useToggleState(false);
+  console.log("TODO RE_RENDER:", task);
+
   return (
     <ListItem style={{ height: "64px" }}>
       {isEditing ? (
@@ -31,12 +33,12 @@ function Todo({ id, task, completed }) {
           </ListItemText>
           <ListItemSecondaryAction>
             <IconButton
-              aria-label='Delete'
+              aria-label="Delete"
               onClick={() => dispatch({ type: "REMOVE", id: id })}
             >
               <DeleteIcon />
             </IconButton>
-            <IconButton aria-label='Edit' onClick={toggle}>
+            <IconButton aria-label="Edit" onClick={toggle}>
               <EditIcon />
             </IconButton>
           </ListItemSecondaryAction>
