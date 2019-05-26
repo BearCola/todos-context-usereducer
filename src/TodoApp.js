@@ -27,10 +27,8 @@ function TodoApp() {
       <Grid container justify="center" style={{ marginTop: "1rem" }}>
         <Grid item xs={11} md={8} lg={4}>
           <TodosProvider>
-            <>
-              <TodoForm />
-              <TodoList />
-            </>
+            <TodoForm />
+            <TodoList />
           </TodosProvider>
         </Grid>
       </Grid>
